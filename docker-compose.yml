@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  recommendation-service:
+    build: .
+    ports:
+      - "5006:5006"
+    environment:
+      - SPRING_APPLICATION_NAME=Recommendation-Service
+      - SERVER_PORT=5006
+      - EXTERNAL_API_URL=http://18.184.52.10:5008/api/v1/cms/course/get-all/10/5
+      - EXTERNAL_API_USER_URL=http://18.184.52.10:5008/api/v1/cms/course/enrollments/8/2
